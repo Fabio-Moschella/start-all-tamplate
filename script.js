@@ -37,17 +37,23 @@ const teamMembers = [
     img: "img/female3.png",
   },
 ];
-const bodyEl = document.querySelector(".body-el");
+//###########################################################################
+const newMembersForm = document.getElementById("new-members-form");
+const newMembersFormNameInput = document.querySelector(".form-control");
+const newMembersFormRoleInput = document.querySelector(".form-control");
+const newMembersFormEmailInput = document.querySelector(".form-control");
+const newMembersFormImageInput = document.querySelector(".form-control");
+const bodyEl = document.querySelector("#rowElement");
 
 console.log(teamMembers);
 for (let i = 0; i < teamMembers.length; i++) {
   let member = teamMembers[i];
   const { name, role, email, img } = member;
 
-  bodyEl.innerHTML += ` <div class="container">
-     <div class="row">
-        <div class="col-3 col-sm-12 col-md-5 ">
-          <div class="card mb-3" style="max-width: 540px">
+  bodyEl.innerHTML += ` 
+     
+        <div class="col-12 col-sm-6 col-md-4">
+          <div class="card mb-3">
             <div class="row g-0">
               <div class="col-md-4">
                 <img src="${img}" class="img-fluid rounded-start" alt="..." />
@@ -62,6 +68,12 @@ for (let i = 0; i < teamMembers.length; i++) {
             </div>
           </div>
         </div>
-      </div>
-    </div>`;
+     
+    `;
 }
+
+//###########################################################################
+
+newMembersForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+});
